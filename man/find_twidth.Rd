@@ -15,7 +15,7 @@ find_twidth(
 )
 }
 \arguments{
-\item{Shape}{Shape of the site}
+\item{Shape}{Shape of the site, either "rec" (rectangle) or "cir" (circle)}
 
 \item{T_Len}{Length of transect (in m)}
 

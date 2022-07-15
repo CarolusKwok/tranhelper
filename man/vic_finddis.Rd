@@ -4,12 +4,12 @@
 \alias{vic_finddis}
 \title{Finds distance between 2 points}
 \usage{
-vic_finddis(p1, p2)
+vic_finddis(p1, p2, a = 6378137, f = 1/298.257223563)
 }
 \arguments{
-\item{p1}{Location of point 1, in the format of c(Latitude, Longitude). Both in degrees}
+\item{p1}{Location of point 1, in the format of c(lat, lon). Both in degrees}
 
-\item{p2}{Location of point 2, in the format of c(Latitude, Longitude). Both in degrees}
+\item{p2}{Location of point 2, in the format of c(lat, lon). Both in degrees}
 }
 \value{
 
