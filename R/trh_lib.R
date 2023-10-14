@@ -5,8 +5,9 @@
 #'
 #' @examples trh_lib()
 trh_lib = function(){
+  suppressPackageStartupMessages(library(scales))
   suppressPackageStartupMessages(library(data.table))
-  suppressPackageStartupMessages(library(lubridate))
   suppressPackageStartupMessages(library(tidyverse))
   suppressPackageStartupMessages(library(svglite))
+  suppressPackageStartupMessages(library(rnaturalearth))
 }

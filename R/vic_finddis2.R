@@ -6,15 +6,16 @@
 #'
 #' @param p1 Location of point 1, in the format of c(lat, lon). Both in degrees
 #' @param p2 Location of point 2, in the format of c(lat, lon). Both in degrees
-#' @param a
-#' @param f
+#' @param obj A tranhelper object, that contains all the x,y coordinates
+#' @param a constant
+#' @param f constant
 #'
 #' @return
 #' @export
 #'
 #' @examples vic_finddis((10, 10), (20, 20))
 #'
-vic_finddis = function(p1, p2, a = 6378137, f = 1/298.257223563){
+vic_finddis = function(p1, p2, obj, a = 6378137, f = 1/298.257223563){
   #prevent loop failure
   if(p1[1] == p2[1] & p1[2] == p2[2]){
     return(0)
@@ -76,7 +77,7 @@ vic_finddis = function(p1, p2, a = 6378137, f = 1/298.257223563){
   B         = (u_sq/1024) * (256+u_sq*(-128+u_sq*(74-47*u_sq)))
   delta_sig = B * sin_sigma *
     (cos2_sigma_m + 0.25*B*(cos_sigma*(-1+2*cos2_sigma_m**2) -
-                            (1/6) * B * cos2_sigma_m * (-3+4*sin_sigma**2) * (-3+4*cos2_sigma_m**2)))
+                              (1/6) * B * cos2_sigma_m * (-3+4*sin_sigma**2) * (-3+4*cos2_sigma_m**2)))
 
   dis.m = b*A*(sigma-delta_sig)
   bear_i = rad2deg(atan2(cos_u2*sin(Lambda),  cos_u1*sin_u2-sin_u1*cos_u2*cos(Lambda)))
